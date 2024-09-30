@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:40:46 by gchamore          #+#    #+#             */
-/*   Updated: 2024/09/30 15:46:19 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/09/30 16:13:36 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 # define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
 public:
     Fixed();
-	Fixed(int int_nb);
-	Fixed(float float_nb);
+	Fixed(const int int_nb);
+	Fixed(const float float_nb);
     Fixed(const Fixed& other);
     ~Fixed();
 
