@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:42:27 by gchamore          #+#    #+#             */
-/*   Updated: 2024/09/30 14:57:57 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/10/02 11:33:37 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main(void)
 	Fixed const d(b);
 	a = Fixed(1234.4321f);
 	std::cout << "a is " << a << std::endl;
+	//std::cout << "a is " << std::setprecision(10) << a << std::endl;
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
 	std::cout << "d is " << d << std::endl;

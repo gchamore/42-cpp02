@@ -6,13 +6,14 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:40:46 by gchamore          #+#    #+#             */
-/*   Updated: 2024/09/30 16:13:36 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/10/02 11:27:07 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
+#include <iomanip>
 #include <iostream>
 #include <cmath>
 
@@ -25,7 +26,7 @@ public:
     Fixed(const Fixed& other);
     ~Fixed();
 
-    Fixed& operator<<(const Fixed& other);
+    Fixed& operator=(const Fixed& other);
 
     int getRawBits(void) const;
     void setRawBits(int const raw);
@@ -33,8 +34,10 @@ public:
 	int toInt( void ) const;
 
 private:
-    const int _value;
+    int _value;
 	static const int _fractionalBits;
+
+	friend std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 };
 
 #endif

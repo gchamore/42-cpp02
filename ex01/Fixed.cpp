@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:40:48 by gchamore          #+#    #+#             */
-/*   Updated: 2024/09/30 16:14:45 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/10/02 11:49:39 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ Fixed::Fixed() : _value(0)
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const const int int_nb) : _value(0)
+Fixed::Fixed(const int int_nb)
 {
 	std::cout << "Int constructor called" << std::endl;
-	setRawBits(int_nb << _fractionalBits);
+	_value = int_nb * (1 << _fractionalBits);
+
 }
 
 Fixed::Fixed(const float float_nb)
@@ -41,14 +42,20 @@ Fixed::~Fixed()
     std::cout << "Destructor called" << std::endl;
 }
 
-Fixed& Fixed::operator<<(const Fixed& other)
+Fixed& Fixed::operator=(const Fixed& other)
 {
     if (this != &other)
     {
         _value = other._value;
     }
-    std::cout << "Assignment operator called" << std::endl;
+    std::cout << "Copy assignment operator called" << std::endl;
     return *this;
+}
+
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
+{
+    os << fixed.toFloat();
+    return os;
 }
 
 float Fixed::toFloat( void ) const
@@ -59,7 +66,7 @@ float Fixed::toFloat( void ) const
 int Fixed::toInt( void ) const
 {
 	return _value >> _fractionalBits;
-
+	//same que : return (int)_value / (1 << _fractionalBits);
 }
 
 int Fixed::getRawBits(void) const
