@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 10:05:32 by gchamore          #+#    #+#             */
-/*   Updated: 2024/10/03 14:24:12 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/10/03 16:23:59 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Point::Point(const Point& other) : _x(other._x), _y(other._y)
     // std::cout << "Copy constructor called" << std::endl;
 }
 
-Point::~Point()
+Point::~Point() 
 {
     // std::cout << "Destructor called" << std::endl;
 }
