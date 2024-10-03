@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:40:48 by gchamore          #+#    #+#             */
-/*   Updated: 2024/10/02 11:49:39 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/10/02 14:37:31 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ Fixed::Fixed(const float float_nb)
 	_value = roundf(float_nb * (1 << _fractionalBits));
 }
 
-Fixed::Fixed(const Fixed& other) : _value(other._value)
+Fixed::Fixed(const Fixed& other)
 {
     std::cout << "Copy constructor called" << std::endl;
+	*this = other;
 }
 
 Fixed::~Fixed()

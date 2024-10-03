@@ -6,11 +6,11 @@
 #    By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/26 16:41:00 by gchamore          #+#    #+#              #
-#    Updated: 2024/10/03 15:25:07 by gchamore         ###   ########.fr        #
+#    Updated: 2024/10/03 15:25:50 by gchamore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Fixed
+NAME = bsp
 
 CC = c++
 
@@ -18,7 +18,7 @@ CFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 RM = rm -rf
 
-SRCS = main.cpp Fixed.cpp
+SRCS = main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 OBJ_DIR = objs
 
@@ -66,7 +66,7 @@ $(ORANGE)██████╗██████╗ ██████╗      �
 ╚██████╗██║     ██║         ╚██████╔╝███████╗
  ╚═════╝╚═╝     ╚═╝          ╚═════╝ ╚══════╝$(RESET) 
 
-$(YELLOW)EX 01$(RESET)
+$(YELLOW)EX 03$(RESET)
 endef
 export FIRST_HEADER
 

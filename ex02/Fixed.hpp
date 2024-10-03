@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:40:46 by gchamore          #+#    #+#             */
-/*   Updated: 2024/10/03 14:53:59 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/10/03 14:27:20 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,31 @@ public:
 
     Fixed& operator=(const Fixed& other);
 
+	Fixed operator+(const Fixed& other) const;
+	Fixed operator-(const Fixed& other) const;
+	Fixed operator*(const Fixed& other) const;
+	Fixed operator/(const Fixed& other) const;
+
+	bool operator==(const Fixed& other) const;
+	bool operator!=(const Fixed& other) const;
+	bool operator<(const Fixed& other) const;
+	bool operator>(const Fixed& other) const;
+	bool operator<=(const Fixed& other) const;
+	bool operator>=(const Fixed& other) const;
+
+	Fixed& operator++();
+	Fixed operator++(int);
+	Fixed& operator--();
+	Fixed operator--(int);
+
     int getRawBits(void) const;
     void setRawBits(int const raw);
 	float toFloat( void ) const;
 	int toInt( void ) const;
+	static Fixed& min(Fixed& a, Fixed& b);
+    static const Fixed& min(const Fixed& a, const Fixed& b);
+    static Fixed& max(Fixed& a, Fixed& b);
+    static const Fixed& max(const Fixed& a, const Fixed& b);
 
 private:
     int _value;

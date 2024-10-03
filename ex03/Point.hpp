@@ -1,43 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 16:40:46 by gchamore          #+#    #+#             */
-/*   Updated: 2024/10/03 14:53:59 by gchamore         ###   ########.fr       */
+/*   Created: 2024/10/03 09:16:55 by gchamore          #+#    #+#             */
+/*   Updated: 2024/10/03 14:10:17 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef POINT_HPP
+# define POINT_HPP
 
 #include <iomanip>
 #include <iostream>
 #include <cmath>
+#include "Fixed.hpp"
 
-class Fixed
+class Point
 {
 public:
-    Fixed();
-	Fixed(const int int_nb);
-	Fixed(const float float_nb);
-    Fixed(const Fixed& other);
-    ~Fixed();
+    Point();
+	Point(const float float_x, const float float_y);
+    Point(const Point& other);
+    ~Point();
 
-    Fixed& operator=(const Fixed& other);
-
-    int getRawBits(void) const;
-    void setRawBits(int const raw);
-	float toFloat( void ) const;
-	int toInt( void ) const;
+    Point& operator=(const Point& other);
+	Fixed getX() const;
+    Fixed getY() const;
 
 private:
-    int _value;
-	static const int _fractionalBits;
+    Fixed _x;
+	Fixed _y;
 };
 
-std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif
