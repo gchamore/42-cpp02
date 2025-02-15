@@ -2,7 +2,7 @@
 
 ## 📝 Présentation
 
-Le module **C++ 02** introduit des concepts avancés comme le **polymorphisme ad-hoc**, la **surcharge d’opérateurs** et la **forme canonique de Coplien**.  
+Le module **C++ 02** introduit des concepts avancés comme le **polymorphisme**, la **surcharge d’opérateurs** et la **forme canonique de Coplien**.  
 L’objectif est d’améliorer la manipulation des objets en **C++98** et de renforcer les bonnes pratiques en programmation orientée objet.
 
 ---
